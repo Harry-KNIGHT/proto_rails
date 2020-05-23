@@ -22,4 +22,33 @@
 }
 
 .jumbotron h1 {
+  font-family: italic;
+}
+
+/*footer*/
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #28a745;
+  color: #28a745;
+
+  text-decoration: none;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+footer a {
+  color: #28a745;
 }
