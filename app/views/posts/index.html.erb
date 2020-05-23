@@ -14,12 +14,10 @@
             <td><%= post.description %></td>
             <td><%= link_to 'Edit', edit_post_path(post) %></td>
             <td><%= link_to 'Show', post_path(post) %></td>
-           
-
-            
-
+            <td><%= link_to 'Delet', post_path(post), method: :delete %></td>
         </tr>
     <% end %>
 
     </tbody>
 </table>
+    <p><%= link_to 'Home',root_path%></p>
