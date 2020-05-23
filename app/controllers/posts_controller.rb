@@ -1,7 +1,5 @@
 class PostsController < ApplicationController
 
-    def index
-    end
     
     def new
         @post = Post.new
@@ -9,19 +7,23 @@ class PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
-        @post.save
-        redirect_to posts_show(@post)
+        if @post.save
+            flash[:notice] = "Post crée"
+            redirect_to post_path(@post)
+        else
+            render 'new'
+        end
     end
 
-    def edit
+    def show
+        @post = Post.find(params[:id])
     end
 
-    def destroy
-    end
 
+  
     private
 
     def post_params
-        params.require(:post).permit(:title, :description)
+        params.require(:post).permit(:title, :description, :image)
     end
 end
