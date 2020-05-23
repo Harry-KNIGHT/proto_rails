@@ -13,3 +13,13 @@
 .center {
   text-align: center;
 }
+
+.jumbotron {
+  background-image: asset-url("world.jpg");
+  background-repeat: none;
+  background-size: cover;
+  height: 500px;
+}
+
+.jumbotron h1 {
+}
