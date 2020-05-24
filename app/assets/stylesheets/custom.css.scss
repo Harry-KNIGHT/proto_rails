@@ -29,19 +29,20 @@
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #28a745;
-  color: #28a745;
-
+  border-top: 1px solid #28a745; /*Ligne*/
   text-decoration: none;
 }
 
 footer small {
+  /* restera à gauche */
   float: left;
 }
 
 footer ul {
+  /* restera à droite*/
   float: right;
   list-style: none;
+  /* retire les points*/
 }
 
 footer ul li {
@@ -52,3 +53,4 @@ footer ul li {
 footer a {
   color: #28a745;
 }
+

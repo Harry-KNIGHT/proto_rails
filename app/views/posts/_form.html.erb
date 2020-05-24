@@ -1,30 +1,38 @@
+
+
 <% if @post.errors.any? %>
-    <h2>Erreurs</h2>
+        <h2>Erreurs</h2>
 
-    <% @post.errors.full_messages.each do |msg| %>
-        <ul>
-            <li> <%= msg %> </li>
-        </ul>
-    <% end%>
-
-<% end %>
-<%= form_for @post do |f|%>
-
-    <p>
-        <%= f.label :title %> <br />
-        <%= f.text_field :title %>
-    </p>
-    <p>
-       <%= f.label :description %><br />
-       <%= f.text_area :description %>
-    </p>
-     <p>
-       <%= f.label :image %><br />
-       <%= f.text_field :image %>
-    </p>
-     <p>
-       <%= f.submit %>
-    </p>
+        <% @post.errors.full_messages.each do |msg| %>
+            <ul>
+                <li> <%= msg %> </li>
+            </ul>
+        <% end%>
 <% end %>
 
-<%= link_to 'Posts list', posts_path %>
+
+
+<div class="row">
+    <div class="p-5 offset-md-3 offset-sm-2">
+        <div class="align-middle">
+            <%= form_for(@post, :html => {class: "form-horizontal", role: "form"}) do |f|%>
+                <div class="form-group">
+                        <%= f.label :title %>
+                        <%= f.text_field :title,  class:"form-control", placeholder:"Titre"%>
+                </div>
+                <div class="form-group">
+                        <%= f.label :description %>
+                        <%= f.text_area :description, rows: 5,  class:"form-control", placeholder:"Description du post"%>
+                </div>
+                <div class="form-group">
+                        <%= f.label :image %>
+                        <%= f.text_field :image, type:"file", class: "btn btn-success form-control-file", placeholder:"Photo" %>
+                </div>
+                <div class="form-group">
+                    <%= f.submit class:"btn btn-outline-success"%>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
