@@ -1,3 +1,4 @@
+
 <% if @post.errors.any? %>
         <h2>Erreurs</h2>
 
@@ -9,27 +10,28 @@
 <% end %>
 
 
-
-<div class="row">
-    <div class="offset-sm-4">
-        <div class="align-middle">
-            <%= form_for(@post, :html => {class: "form-horizontal", role: "form"}) do |f|%>
-                <div class="form-group">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5 col-md-offset-5">
+            <!-- <div class="align-middle"> -->
+                <%= form_for(@post, :html => {class: "form-horizontal", role: "form"}) do |f|%>
+                    <div class="form-group">
                         <%= f.label :title %>
                         <%= f.text_field :title,  class:"form-control", placeholder:"Titre"%>
-                </div>
-                <div class="form-group">
-                        <%= f.label :description %>
-                        <%= f.text_area :description, rows: 10,  class:"form-control", placeholder:"Description du post"%>
-                </div>
-                <div class="form-group">
-                        <%= f.label :image %>
-                        <%= f.text_field :image, type:"file", class: "btn btn-success form-control-file", placeholder:"Photo" %>
-                </div>
-                <div class="form-group">
-                    <%= f.submit class:"btn btn-outline-success"%>
-                </div>
-            <% end %>
+                    </div>
+                    <div class="form-group">
+                            <%= f.label :description %>
+                            <%= f.text_area :description, rows: 10,  class:"form-control", placeholder:"Description du post"%>
+                    </div>
+                    <div class="form-group">
+                            <%= f.label :image %>
+                            <%= f.text_field :image, type:"file", class: "btn btn-success form-control-file", placeholder:"Photo" %>
+                    </div>
+                    <div class="form-group">
+                        <%= f.submit class:"btn btn-outline-success"%>
+                    </div>
+                <% end %>
+            <!-- </div> -->
         </div>
     </div>
 </div>
