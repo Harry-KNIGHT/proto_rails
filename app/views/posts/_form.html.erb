@@ -1,18 +1,8 @@
-
-<% if @post.errors.any? %>
-        <h2>Erreurs</h2>
-
-        <% @post.errors.full_messages.each do |msg| %>
-            <ul>
-                <li> <%= msg %> </li>
-            </ul>
-        <% end%>
-<% end %>
-
+<%= render 'shared/errors', obj: @post %>
 
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-5 col-md-offset-5 col-sm-5">
+        <div class="col-md-5 col-md-offset-5 col-sm-6">
             <%= form_for(@post, :html => {class: "form-horizontal", role: "form"}) do |f|%>
                 <div class="form-group">
                     <%= f.label :title %>
