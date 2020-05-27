@@ -1,6 +1,29 @@
-<h1><%= @post.title %></h1>
-<p> <%= @post.description %></p>
-<p> <%= @post.image %></p>
-<%= link_to 'Posts', posts_path %>
-<%= link_to 'Edit this post', edit_post_path(@post) %>
+<div class="container">
+    <div class="row justify-content-center p-5">
+        <div class="col-sm-9">
+            <div class="card">
+
+                <div class="card-header">
+                    <h2><%= @post.title %></h2>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"> <%= @post.description %></p>
+                      <img src="..." class="card-img-top" alt="..."> <!-- <p><%= @post.image %></p> FIREBASE IMG-->
+                </div>
+                <div class="card-footer text-muted">
+                    <!-- Timestamps -->
+                </div>
+            </div>
+            <div class="pt-1">
+                <div class="offset-4 col-sm-4">
+                <%= link_to 'Posts', posts_path, class:"btn btn-outline-success" %> <%= link_to 'Edit this post', edit_post_path(@post), class:"btn btn-outline-info" %> 
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 
