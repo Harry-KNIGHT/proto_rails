@@ -1,26 +1,35 @@
-<h1>Posts </h1>
-<p><%= link_to 'New post', new_post_path %></p>
-
-<table>
-    <thead>
-        <th>Titre</th>
-        <th>Description</th>
-        <th>Image</th>
-
-    </thead>
-
-    <% @posts.each do |post|%>
-    <tbody>
-        <tr>
-            <td><%= post.title %></td>
-            <td><%= post.description %></td>
-            <td><%= post.image %></td>
-            <td><%= link_to 'Edit', edit_post_path(post), class:"btn btn-outline-primary" %></td>
-            <td><%= link_to 'Show', post_path(post), class:"btn btn-outline-info" %></td>
-            <td><%= link_to 'Delet', post_path(post), method: :delete, class:"btn btn-outline-danger" %></td>
-        </tr>
-    <% end %>
-
-    </tbody>
-</table>
-    <p><%= link_to 'Home',root_path%></p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-8">
+            <h1>Posts </h1>
+            <p><%= link_to 'New post', new_post_path %>
+            </p>
+            <div class="table-responsive">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th>Titre</th>
+                            <th>Description</th>
+                            <th>Image</th>
+                            <th class="float-right">Actions</th>
+                        </tr>
+                    </thead>    
+                    <% @posts.each do |post|%>
+                    <tbody>
+                        <tr>
+                            <td><%= link_to post.title, post_path(post) %></td>
+                            <td><%= truncate(post.description, length: 80) %></td> <!-- truncate + length pour "..." en cas ou description trop longue-->
+                            <td><%= post.image %></td>
+                            <td><%= link_to 'Edit', edit_post_path(post), class:"btn btn-outline-primary" %></td>
+                            <td><%= link_to 'Show', post_path(post), class:"btn btn-outline-info" %></td>
+                            <td><%= link_to 'Delet', post_path(post), method: :delete, class:"btn btn-outline-danger" %></td>
+                        </tr>
+                    <% end %>
+                    </tbody>
+                </table>
+            </div>
+            <p><%= link_to 'Home',root_path%></p>
+        </div>
+    </div>
+</div>
+   
