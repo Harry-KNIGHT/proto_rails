@@ -11,7 +11,6 @@ class PostsController < ApplicationController
     def create
         @post = Post.new(post_params)
         @post.user = User.first
-
         if @post.save
             flash[:success] = "Post crée"
             redirect_to post_path(@post)
@@ -26,6 +25,7 @@ class PostsController < ApplicationController
 
     def edit
         @post = Post.find(params[:id])
+        
     end
 
     def update
